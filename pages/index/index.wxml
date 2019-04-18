@@ -1,13 +1,58 @@
-<!--index.wxml-->
+<!-- index.wxml -->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <swiper>
+    <swiper-item>
+      <image src=''></image>
+    </swiper-item>
+    <swiper-item>
+      <image src=''></image>
+    </swiper-item>
+  </swiper>
+  <view class='info'>
+    <view>
+      <image src='/assets/icon_home_suc@2x.png'></image>
+      <text>累计平台6429</text>
+    </view>
+    <view>
+      <image src='/assets/icon_home_sum@2x.png'></image>
+      <text>正常运营1187</text>
+    </view>
+    <view>
+      <image src='/assets/icon_home_err@2x.png'></image>
+      <text>累计问题2578</text>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class='main'>
+    <text class='title'>大家都在查</text>
+    <view class='hint'>
+      风险提示
+      <text>1分钟前周**的检测结果被评估为R5</text>
+    </view>
+    <form action="">
+      <view>
+        <input placeholder='请输入借款人真实姓名'></input>
+        <input placeholder='请输入借款人身份证号' id="idCard"></input>
+      </view>
+      <view class="pact">
+        <text>*上传出借合同截图</text>
+        <text>怎么找到合同？</text>
+      </view>
+      <view class="dkj">
+        剩余{{0}}元抵扣金
+        <text>获取抵扣金</text>
+      </view>
+      <view class='content'>
+        <input></input>
+        <image src='/assets/upload_add.png'></image>
+      </view>
+      <view class="btn-area">
+        <button form-type="submit">立即鉴别  9.9元</button>
+        <button class="check">查看示例报告</button>
+      </view>
+      <view class='protocol'>
+        <icon type='success' color='green'></icon>
+        <text>使用本服务意味着您已阅读并同意 《用户服务协议及隐私》《数据采集服务协议</text>
+      </view>
+    </form>
   </view>
 </view>
