@@ -1,0 +1,120 @@
+<!--pages/details/eport-details.wxml-->
+<view class='container'>
+  <view class='user'>
+    <view>
+      申请人：
+      <text>{{user_info.realname}}</text>
+    </view>
+    <view>
+      评估时间：
+      <text>{{user_info.apply_time}}</text>
+    </view>
+  </view>
+  <view class='risk'>
+    <view class='risk-sign {{base_info.risk_level}}'>{{base_info.risk_level}}</view>
+    <view class='risk_level_tips'>{{base_info.risk_level_tips}}</view>
+  </view>
+  <view class='base_info'>
+    <view class='title'>基础信息验证</view>
+    <text>{{base_info.show_tips}}</text>
+    <view class='list'>
+      <view class='li'>
+        借款人姓名：
+        <text>{{base_info.realname}}</text>
+        <text class='error' wx:if='{{base_info.has_risk_identity==="1"}}'>姓名不匹配</text>
+      </view>
+      <view class='li'>
+        身份证号码：
+        <text>{{base_info.id_number}}</text>
+        <text class='error' wx:if='{{base_info.has_id_format_error==="1"}}'>格式错误</text>
+        <text wx:if='{{base_info.has_id_second_error==="1"}}'>非二代</text>
+      </view>
+      <view class='li'>
+        性别：
+        <text>{{base_info.gender}}</text>
+      </view>
+      <view class='li'>
+        地区：
+        <text>{{base_info.id_card_address}}</text>
+      </view>
+      <view class='li'>
+        手机号验证：
+        <text>{{base_info.phone}}</text>
+        <text class='error' wx:if='{{base_info.has_phone_fake==="1"}}'>虚假号码</text>
+        <text class='error' wx:if='{{base_info.has_phone_small==="1"}}'>通讯小号</text>
+      </view>
+    </view>
+  </view>
+  <view class='risk_court'>
+    <view class='title'>法院信息验证</view>
+    <text>{{risk_court.show_tips}}</text>
+    <view class='table'>
+      <view wx:for='{{risk_court.risks}}' wx:key='{{index}}'>
+        <text>{{item.item_name}}</text>
+        <text>{{item.item_value}}</text>
+      </view>
+    </view>
+
+
+
+  </view>
+  <view class='risk_netloan'>
+    <view class='title'>贷款信息</view>
+    <text>{{risk_netloan.netloan_notes}}</text>
+    <view class='dot'>
+      <text></text> {{risk_netloan.show_tips}}
+    </view>
+    <view class='borrow_number'>
+      <view class='wrap'>
+        <view>借款平台</view>
+        <view>
+          <view>近期在多个平台申请借款次数</view>
+          <view class='column'>
+            <text>{{risk_netloan.risks[0].term}}</text>
+            <text>{{risk_netloan.risks[1].term}}</text>
+            <text>{{risk_netloan.risks[2].term}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='column'>
+        <text>一般消费分期金融平台</text>
+        <text>{{risk_netloan.risks[0].num[0]}}</text>
+        <text>{{risk_netloan.risks[1].num[0]}}</text>
+        <text>{{risk_netloan.risks[2].num[0]}}</text>
+      </view>
+      <view class='column'>
+        <text>互联网金融门户</text>
+        <text>{{risk_netloan.risks[0].num[1]}}</text>
+        <text>{{risk_netloan.risks[1].num[1]}}</text>
+        <text>{{risk_netloan.risks[2].num[1]}}</text>
+      </view>
+      <view class='column'>
+        <text>银行消费金融公司</text>
+        <text>{{risk_netloan.risks[0].num[2]}}</text>
+        <text>{{risk_netloan.risks[1].num[2]}}</text>
+        <text>{{risk_netloan.risks[2].num[2]}}</text>
+      </view>
+      <view class='column'>
+        <text>小额贷款公司</text>
+        <text>{{risk_netloan.risks[0].num[3]}}</text>
+        <text>{{risk_netloan.risks[1].num[3]}}</text>
+        <text>{{risk_netloan.risks[2].num[3]}}</text>
+      </view>
+      <view class='column'>
+        <text>P2P网贷</text>
+        <text>{{risk_netloan.risks[0].num[4]}}</text>
+        <text>{{risk_netloan.risks[1].num[4]}}</text>
+        <text>{{risk_netloan.risks[2].num[4]}}</text>
+      </view>
+      <view class='column'>
+        <text>大型消费金融公司</text>
+        <text>{{risk_netloan.risks[0].num[5]}}</text>
+        <text>{{risk_netloan.risks[1].num[5]}}</text>
+        <text>{{risk_netloan.risks[2].num[5]}}</text>
+      </view>
+    </view>
+    <view class='dot'>
+      <text></text> 最近3个月内贷款相关信息
+    </view>
+  </view>
+</view>

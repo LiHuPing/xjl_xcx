@@ -1,0 +1,155 @@
+/* pages/details/eport-details.wxss */
+
+.container>view {
+  padding: 0 15px;
+  margin-top: 10px;
+  color: rgba(153, 153, 153, 1);
+  font-size: 12px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  background: rgba(255, 255, 255, 1);
+}
+
+.user {
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user view {
+  font-size: 15px;
+}
+
+.user text {
+  color: #111111ff;
+}
+
+.risk_level_tips {
+  width: 257px;
+  height: 56px;
+}
+
+.risk {
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.risk-sign {
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  font-size: 36px;
+  text-align: center;
+  border-radius: 40px;
+  color: #fff;
+  font-style: normal;
+}
+
+.risk-sign.R1 {
+  background: #26e1a5;
+}
+
+.risk-sign.R2 {
+  background: #1b9bf9;
+}
+
+.risk-sign.R3 {
+  background: #f9ac1b;
+}
+
+.risk-sign.R4 {
+  background: #f97d1b;
+}
+
+.risk-sign.R5 {
+  background: #e0322c;
+}
+
+view.title {
+  margin: 20px 0 15px 0;
+  font-size: 18px;
+  color: rgba(17, 17, 17, 0.98);
+}
+
+.list {
+  padding: 10px 0;
+}
+
+.list .li {
+  height: 33.33333px;
+}
+
+.list .li text:nth-of-type(1) {
+  font-size: 15px;
+  color: rgba(17, 17, 17, 0.98);
+}
+
+text.error {
+  display: inline-block;
+  margin-left: 10px;
+  width: 48px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 2px;
+  border: 1px solid rgba(224, 50, 44, 1);
+  color: rgba(224, 50, 44, 1);
+  padding: 0 6px;
+}
+
+.table {
+  border: 1px solid rgba(238, 238, 238, 1);
+  border-bottom: 0;
+  margin-top: 10px;
+}
+
+.table>view {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid rgba(238, 238, 238, 1);
+}
+
+.table>view text {
+  text-align: center;
+  display: inline-block;
+  width: 49%;
+}
+
+.table>view text:nth-of-type(1) {
+  border-right: 1px solid rgba(238, 238, 238, 1);
+}
+
+.dot {
+  margin: 10px 0;
+}
+
+.dot text {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: rgba(17, 17, 17, 1);
+  border-radius: 3px;
+  vertical-align: 1px;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.borrow_number {
+  border: 1px solid rgba(238, 238, 238, 1);
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

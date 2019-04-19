@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/details/eport-details",
     "pages/index/index",
     "pages/logs/logs"
   ],
